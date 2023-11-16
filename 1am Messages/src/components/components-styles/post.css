@@ -1,0 +1,72 @@
+.post-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 37rem;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.post-info h2,p {
+    margin: 0;
+}
+
+.post-card .post-info {
+    display : flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    gap: 1rem;
+}
+
+.post-card .post-info:hover {
+    color: #ffffff;
+    font-size: 1.1rem;
+    z-index: 1;
+    position: absolute;
+    transition: 0.1s ease-in-out;
+    padding: 0.5rem;
+    border-radius: 10px/10px;
+    color: #ffffff;
+    background-color: rgb(245, 123, 0);
+}
+
+.post-info p {
+    color:rgb(255, 0, 0)
+}
+
+.post-card .post-bottom {
+    display: flex;
+    flex-direction: column;
+    width: 37rem;
+}
+
+.post-content-visible {
+    text-overflow: none;
+    overflow: none;
+    white-space: wrap;
+}
+
+.post-content-hidden{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.post-readMore {
+    /* I want to hide it as the initial state */
+    display: block;
+}
+
+.post-readMore-visible {
+    /* show the readMore Button */
+    display: block;
+}
+
+hr {
+    border: 0.5px solid #ffffff1e;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
