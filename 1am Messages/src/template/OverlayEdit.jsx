@@ -26,14 +26,18 @@ function OverlayEdit() {
             return
         }
 
-        dbFunctions.updatePost({
-            id: id,
+        let updatePost = {
             title: postTitle,
             body: postBody,
-        })
+            id: id
+        }
+        console.log(updatePost)
+        dbFunctions.updatePost(updatePost)
+        console.log('Post updated')
 
         setPostTitle('')
         setPostBody('')
+        navigate(`/post/${id}`)
     }
 
     const handleCancel = () => {

@@ -44,14 +44,21 @@ async function updateLikeCount(id, count) {
   });
 }
 
-// update the post title and body for a note
-async function updatePost(id, title, body) {
-  const noteRef = doc(db, "notes", id);
-  await updateDoc(noteRef, {
-    title: title,
-    body: body
-  });
+async function updatePost(obj) {
+  try {
+    const noteRef = doc(db, "notes", obj.id);
+    await updateDoc(noteRef, {
+      title: obj.title,
+      body: obj.body
+    });
+    console.log("Post updated successfully");
+  } catch (error) {
+    console.error("Error updating post:", error);
+    // You might want to throw the error again if you want to propagate it
+    // throw error;
+  }
 }
+
 
 // partial match search for notes
 async function searchNotes(searchText) {
